@@ -1,6 +1,5 @@
 [Unit]
 Description=netdumper
-After=sshdgenkeys.service
 
 [Service]
 Type=notify

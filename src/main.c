@@ -5,8 +5,6 @@
 #include "client.h"
 #include "protocol.h"
 
-static bool use_systemd = false;
-
 static void stopping() {
 	static bool sent = false;
 	if (!sent) {
@@ -21,9 +19,7 @@ int main(int argc, char **argv) {
 
 	socks = sd_listen_fds(1);
 
-	/*if (strcmp(argv[1], "srv") == 0) {*/
 	if (socks == 1) {
-		use_systemd = true;
 		if (server_mode(SYSTEMD) < 0) {
 			perror("server_mode");
 			r = -1;
