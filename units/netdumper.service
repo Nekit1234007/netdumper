@@ -1,0 +1,7 @@
+[Unit]
+Description=netdumper
+After=sshdgenkeys.service
+
+[Service]
+Type=notify
+ExecStart=/home/nekit/bin/netdumper
